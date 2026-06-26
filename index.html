@@ -275,7 +275,7 @@
         <label for="urlInput">Link de destino</label>
         <div class="field-wrap">
           <span class="field-icon">↗</span>
-          <input id="urlInput" type="text" autocomplete="url" placeholder="https://seusite.com.br" value="https://" />
+          <input id="urlInput" type="text" autocomplete="url" placeholder="https://seusite.com.br" />
         </div>
         <div id="urlError" class="error" role="alert"></div>
 
@@ -612,7 +612,7 @@
       }
 
       function clearAll() {
-        urlInput.value = 'https://';
+        urlInput.value = '';
         qrcode.innerHTML = '';
         logoFile.value = '';
         logoDataUrl = '';
@@ -650,7 +650,7 @@
         control.addEventListener('change', () => { if (lastValue) generate(); });
       });
 
-      window.addEventListener('load', () => setTimeout(generate, 80));
+      // O campo inicia vazio; o QR Code é gerado apenas quando o usuário clicar em gerar.
     })();
   </script>
 </body>
